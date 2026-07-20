@@ -1,0 +1,144 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Business Rules}
+\label{chap:business-rules}
+
+This chapter specifies the business rules that govern the operation of
+the EcoTrace Intelligent Electronic Waste Recovery and Circular Economy
+Management System.
+
+Business rules define the policies, constraints, validations, and
+operational procedures that the system shall enforce during normal
+operation.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+\label{sec:business-rules-introduction}
+
+The business rules described in this chapter ensure that electronic
+waste management activities are performed consistently, securely, and
+according to the objectives of the EcoTrace platform.
+
+These rules apply to all authorized users and system modules.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{User Registration Rules}
+\label{sec:user-registration-rules}
+
+\begin{longtable}{|p{3cm}|p{10cm}|}
+
+\hline
+\textbf{Rule ID} &
+\textbf{Business Rule}\\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Rule ID} &
+\textbf{Business Rule}\\
+\hline
+\endhead
+
+BR-REG-001 &
+Every user shall register using a unique email address.\\
+\hline
+
+BR-REG-002 &
+Each user account shall be assigned exactly one primary role.\\
+\hline
+
+BR-REG-003 &
+Required registration fields shall be completed before account creation.\\
+\hline
+
+BR-REG-004 &
+Only verified accounts shall access protected resources.\\
+\hline
+
+BR-REG-005 &
+Duplicate user accounts shall not be permitted.\\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Authentication Rules}
+\label{sec:authentication-rules}
+
+\begin{longtable}{|p{3cm}|p{10cm}|}
+
+\hline
+\textbf{Rule ID} &
+\textbf{Business Rule}\\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Rule ID} &
+\textbf{Business Rule}\\
+\hline
+\endhead
+
+BR-AUTH-001 &
+Users shall authenticate before accessing protected modules.\\
+\hline
+
+BR-AUTH-002 &
+Only active user accounts shall be permitted to log in.\\
+\hline
+
+BR-AUTH-003 &
+Expired sessions shall be terminated automatically.\\
+\hline
+
+BR-AUTH-004 &
+Administrative privileges shall only be granted to authorized personnel.\\
+\hline
+
+BR-AUTH-005 &
+Authentication events shall be recorded in the audit log.\\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Electronic Waste Registration Rules}
+\label{sec:waste-registration-rules}
+
+\begin{longtable}{|p{3cm}|p{10cm}|}
+
+\hline
+\textbf{Rule ID} &
+\textbf{Business Rule}\\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Rule ID} &
+\textbf{Business Rule}\\
+\hline
+\endhead
+
+BR-EWR-001 &
+Each electronic waste item shall receive a unique identification number.\\
+\hline
+
+BR-EWR-002 &
+Waste registration shall include the waste category.\\
+\hline
+
+BR-EWR-003 &
+At least one image shall be uploaded during registration.\\
+\hline
+
+BR-EWR-004 &
+The system shall record the registration date and time.\\
+\hline
+
+BR-EWR-005 &
+GPS location shall be recorded when available.\\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

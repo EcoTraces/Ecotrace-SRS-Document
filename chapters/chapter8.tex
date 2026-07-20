@@ -1,0 +1,1922 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Use Case Specifications}
+\label{chap:use-case-specifications}
+
+This chapter specifies the major use cases supported by the EcoTrace
+Intelligent Electronic Waste Recovery and Circular Economy Management
+System.
+
+Each use case describes how users interact with the system to achieve a
+specific objective. The use cases provide detailed operational
+descriptions that support software design, implementation, testing, and
+validation.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+
+The EcoTrace platform supports multiple categories of users, each with
+different responsibilities and system privileges.
+
+The use cases presented in this chapter describe the interactions
+between users and the software system during normal and exceptional
+operating conditions.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Use Case Summary}
+
+Table~\ref{tab:use_case_summary} summarizes the major use cases of the
+EcoTrace platform.
+
+\begin{longtable}{|p{2.5cm}|p{6cm}|p{4cm}|}
+
+\hline
+
+\textbf{Use Case ID}
+
+&
+
+\textbf{Use Case}
+
+&
+
+\textbf{Primary Actor}
+
+\\
+
+\hline
+
+\endfirsthead
+
+\hline
+
+\textbf{Use Case ID}
+
+&
+
+\textbf{Use Case}
+
+&
+
+\textbf{Primary Actor}
+
+\\
+
+\hline
+
+\endhead
+
+UC-001
+
+&
+
+User Login
+
+&
+
+All Users
+
+\\
+
+\hline
+
+UC-002
+
+&
+
+Register User
+
+&
+
+Guest
+
+\\
+
+\hline
+
+UC-003
+
+&
+
+Register Electronic Waste
+
+&
+
+Household User
+
+\\
+
+\hline
+
+UC-004
+
+&
+
+AI Classification
+
+&
+
+Household User
+
+\\
+
+\hline
+
+UC-005
+
+&
+
+Schedule Pickup
+
+&
+
+Household User
+
+\\
+
+\hline
+
+UC-006
+
+&
+
+Assign Pickup
+
+&
+
+Collector
+
+\\
+
+\hline
+
+UC-007
+
+&
+
+Transport Waste
+
+&
+
+Driver
+
+\\
+
+\hline
+
+UC-008
+
+&
+
+Repair Device
+
+&
+
+Technician
+
+\\
+
+\hline
+
+UC-009
+
+&
+
+Refurbish Device
+
+&
+
+Technician
+
+\\
+
+\hline
+
+UC-010
+
+&
+
+Recycle Device
+
+&
+
+Recycler
+
+\\
+
+\hline
+
+UC-011
+
+&
+
+Marketplace Purchase
+
+&
+
+Buyer
+
+\\
+
+\hline
+
+UC-012
+
+&
+
+Generate Reports
+
+&
+
+Administrator
+
+\\
+
+\hline
+
+UC-013
+
+&
+
+Manage Users
+
+&
+
+Administrator
+
+\\
+
+\hline
+
+UC-014
+
+&
+
+Manage Marketplace
+
+&
+
+Administrator
+
+\\
+
+\hline
+
+UC-015
+
+&
+
+Configure System
+
+&
+
+Super Administrator
+
+\\
+
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{UC-001 User Login}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+
+\hline
+
+Use Case ID
+
+&
+
+UC-001
+
+\\
+
+\hline
+
+Use Case Name
+
+&
+
+User Login
+
+\\
+
+\hline
+
+Primary Actor
+
+&
+
+All Registered Users
+
+\\
+
+\hline
+
+Goal
+
+&
+
+Authenticate users before granting access.
+
+\\
+
+\hline
+
+Preconditions
+
+&
+
+The user must possess a registered account.
+
+\\
+
+\hline
+
+Trigger
+
+&
+
+The user selects Login.
+
+\\
+
+\hline
+
+Main Success Scenario
+
+&
+
+1. User enters email.
+
+2. User enters password.
+
+3. System validates credentials.
+
+4. System authenticates the user.
+
+5. Dashboard is displayed.
+
+\\
+
+\hline
+
+Alternative Flow
+
+&
+
+Invalid credentials are rejected.
+
+\\
+
+\hline
+
+Postconditions
+
+&
+
+Authenticated session established.
+
+\\
+
+\hline
+
+Related Requirements
+
+&
+
+FR-AUTH-001 to FR-AUTH-010
+
+\\
+
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Authentication Module Use Cases}
+\label{sec:authentication-usecases}
+
+This section describes the use cases associated with user
+authentication, account management, and secure access to the EcoTrace
+platform.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{UC-002 Register User}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+
+\hline
+\textbf{Use Case ID} &
+UC-002 \\
+\hline
+
+\textbf{Use Case Name} &
+Register User \\
+\hline
+
+\textbf{Primary Actor} &
+Guest User \\
+\hline
+
+\textbf{Supporting Actors} &
+Firebase Authentication Service \\
+\hline
+
+\textbf{Goal} &
+Create a new EcoTrace user account. \\
+\hline
+
+\textbf{Brief Description} &
+Allows a new user to register and create an account in the EcoTrace
+system. \\
+\hline
+
+\textbf{Priority} &
+High \\
+\hline
+
+\textbf{Frequency of Use} &
+High \\
+\hline
+
+\textbf{Preconditions} &
+The user does not already possess a registered account. \\
+\hline
+
+\textbf{Trigger} &
+The user selects the Register button. \\
+\hline
+
+\textbf{Main Success Scenario} &
+1. User enters registration details.\\
+2. System validates all mandatory fields.\\
+3. System verifies email uniqueness.\\
+4. User account is created.\\
+5. Verification email is sent.\\
+6. Registration confirmation is displayed.\\
+\hline
+
+\textbf{Alternative Flow} &
+If mandatory fields are missing, the system requests correction. \\
+\hline
+
+\textbf{Exception Flow} &
+If the email already exists, registration is rejected. \\
+\hline
+
+\textbf{Postconditions} &
+A new user account is successfully created. \\
+\hline
+
+\textbf{Related Functional Requirements} &
+FR-AUTH-001, FR-AUTH-002 \\
+\hline
+
+\textbf{Related Business Rules} &
+BR-REG-001 to BR-REG-005 \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{UC-003 Verify Email Address}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+
+\hline
+\textbf{Use Case ID} &
+UC-003 \\
+\hline
+
+\textbf{Use Case Name} &
+Verify Email Address \\
+\hline
+
+\textbf{Primary Actor} &
+Registered User \\
+\hline
+
+\textbf{Supporting Actors} &
+Firebase Authentication Service \\
+\hline
+
+\textbf{Goal} &
+Verify ownership of the registered email address. \\
+\hline
+
+\textbf{Preconditions} &
+The user account has been created. \\
+\hline
+
+\textbf{Trigger} &
+User clicks the verification link received by email. \\
+\hline
+
+\textbf{Main Success Scenario} &
+1. User opens verification link.\\
+2. System validates verification token.\\
+3. Account status is updated to verified.\\
+4. User receives confirmation message.\\
+\hline
+
+\textbf{Alternative Flow} &
+Expired verification links require a new verification email. \\
+\hline
+
+\textbf{Postconditions} &
+The account becomes verified. \\
+\hline
+
+\textbf{Related Functional Requirements} &
+FR-AUTH-002, FR-AUTH-003 \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{UC-004 Reset Password}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+
+\hline
+\textbf{Use Case ID} &
+UC-004 \\
+\hline
+
+\textbf{Use Case Name} &
+Reset Password \\
+\hline
+
+\textbf{Primary Actor} &
+Registered User \\
+\hline
+
+\textbf{Goal} &
+Recover access to an existing account. \\
+\hline
+
+\textbf{Preconditions} &
+User possesses a registered email address. \\
+\hline
+
+\textbf{Trigger} &
+User selects Forgot Password. \\
+\hline
+
+\textbf{Main Success Scenario} &
+1. User enters registered email.\\
+2. System validates email.\\
+3. Password reset email is sent.\\
+4. User creates a new password.\\
+5. Password is successfully updated.\\
+\hline
+
+\textbf{Alternative Flow} &
+Unknown email addresses are rejected. \\
+\hline
+
+\textbf{Postconditions} &
+Password is successfully changed. \\
+\hline
+
+\textbf{Related Functional Requirements} &
+FR-AUTH-005 \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{UC-005 Change Password}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+
+\hline
+\textbf{Use Case ID} &
+UC-005 \\
+\hline
+
+\textbf{Use Case Name} &
+Change Password \\
+\hline
+
+\textbf{Primary Actor} &
+Authenticated User \\
+\hline
+
+\textbf{Goal} &
+Allow authenticated users to update their passwords. \\
+\hline
+
+\textbf{Preconditions} &
+User is logged in. \\
+\hline
+
+\textbf{Trigger} &
+User selects Change Password. \\
+\hline
+
+\textbf{Main Success Scenario} &
+1. User enters current password.\\
+2. User enters new password.\\
+3. System validates credentials.\\
+4. Password is updated successfully.\\
+\hline
+
+\textbf{Postconditions} &
+The new password becomes active. \\
+\hline
+
+\textbf{Related Functional Requirements} &
+FR-AUTH-005 \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{UC-006 Logout}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+
+\hline
+\textbf{Use Case ID} &
+UC-006 \\
+\hline
+
+\textbf{Use Case Name} &
+Logout \\
+\hline
+
+\textbf{Primary Actor} &
+Authenticated User \\
+\hline
+
+\textbf{Goal} &
+Terminate the authenticated session securely. \\
+\hline
+
+\textbf{Preconditions} &
+User is logged into the system. \\
+\hline
+
+\textbf{Trigger} &
+User selects Logout. \\
+\hline
+
+\textbf{Main Success Scenario} &
+1. User clicks Logout.\\
+2. System invalidates the session.\\
+3. User is redirected to the login page.\\
+\hline
+
+\textbf{Postconditions} &
+Authenticated session is terminated. \\
+\hline
+
+\textbf{Related Functional Requirements} &
+FR-AUTH-006, FR-AUTH-009 \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{User Management Module Use Cases}
+\label{sec:user-management-usecases}
+
+This section describes the use cases related to user profile
+management, account administration, and user role management.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{UC-007 View Profile}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+
+\hline
+\textbf{Use Case ID} &
+UC-007 \\
+\hline
+
+\textbf{Use Case Name} &
+View Profile \\
+\hline
+
+\textbf{Primary Actor} &
+Authenticated User \\
+\hline
+
+\textbf{Supporting Actors} &
+Cloud Firestore \\
+\hline
+
+\textbf{Goal} &
+Allow users to view their personal profile information. \\
+\hline
+
+\textbf{Brief Description} &
+The system retrieves and displays the authenticated user's profile
+information stored in the database. \\
+\hline
+
+\textbf{Priority} &
+High \\
+\hline
+
+\textbf{Frequency of Use} &
+High \\
+\hline
+
+\textbf{Preconditions} &
+User is authenticated. \\
+\hline
+
+\textbf{Trigger} &
+User selects My Profile. \\
+\hline
+
+\textbf{Main Success Scenario} &
+1. User opens Profile page.\\
+2. System retrieves profile information.\\
+3. Profile details are displayed.\\
+\hline
+
+\textbf{Alternative Flow} &
+If profile information cannot be retrieved, an error message is displayed.\\
+\hline
+
+\textbf{Postconditions} &
+User profile is successfully displayed.\\
+\hline
+
+\textbf{Related Functional Requirements} &
+FR-USER-001, FR-USER-002 \\
+\hline
+
+\textbf{Related Business Rules} &
+BR-REG-001 \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{UC-008 Update Profile}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+
+\hline
+\textbf{Use Case ID} &
+UC-008 \\
+\hline
+
+\textbf{Use Case Name} &
+Update Profile \\
+\hline
+
+\textbf{Primary Actor} &
+Authenticated User \\
+\hline
+
+\textbf{Goal} &
+Allow users to update their personal information. \\
+\hline
+
+\textbf{Preconditions} &
+User is logged into the system. \\
+\hline
+
+\textbf{Trigger} &
+User selects Edit Profile. \\
+\hline
+
+\textbf{Main Success Scenario} &
+1. User edits profile information.\\
+2. System validates updated information.\\
+3. Updated information is saved.\\
+4. Confirmation message is displayed.\\
+\hline
+
+\textbf{Alternative Flow} &
+Validation errors are displayed if required fields are missing.\\
+\hline
+
+\textbf{Postconditions} &
+User profile is updated successfully.\\
+\hline
+
+\textbf{Related Functional Requirements} &
+FR-USER-001, FR-USER-010 \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{UC-009 Upload Profile Picture}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+
+\hline
+\textbf{Use Case ID} &
+UC-009 \\
+\hline
+
+\textbf{Use Case Name} &
+Upload Profile Picture \\
+\hline
+
+\textbf{Primary Actor} &
+Authenticated User \\
+\hline
+
+\textbf{Goal} &
+Allow users to upload or replace their profile photograph. \\
+\hline
+
+\textbf{Preconditions} &
+User is authenticated. \\
+\hline
+
+\textbf{Trigger} &
+User selects Upload Picture. \\
+\hline
+
+\textbf{Main Success Scenario} &
+1. User selects an image.\\
+2. System validates image format.\\
+3. Image is uploaded to Firebase Storage.\\
+4. User profile is updated.\\
+\hline
+
+\textbf{Alternative Flow} &
+Unsupported image formats are rejected.\\
+\hline
+
+\textbf{Postconditions} &
+Profile picture is successfully updated.\\
+\hline
+
+\textbf{Related Functional Requirements} &
+FR-USER-002 \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{UC-010 Manage User Accounts}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+
+\hline
+\textbf{Use Case ID} &
+UC-010 \\
+\hline
+
+\textbf{Use Case Name} &
+Manage User Accounts \\
+\hline
+
+\textbf{Primary Actor} &
+Administrator \\
+\hline
+
+\textbf{Goal} &
+Allow administrators to manage user accounts. \\
+\hline
+
+\textbf{Preconditions} &
+Administrator is authenticated. \\
+\hline
+
+\textbf{Trigger} &
+Administrator opens User Management. \\
+\hline
+
+\textbf{Main Success Scenario} &
+1. Administrator views registered users.\\
+2. Administrator activates or deactivates accounts.\\
+3. Changes are saved.\\
+4. Audit logs are updated.\\
+\hline
+
+\textbf{Alternative Flow} &
+Unauthorized users are denied access.\\
+\hline
+
+\textbf{Postconditions} &
+User accounts are updated.\\
+\hline
+
+\textbf{Related Functional Requirements} &
+FR-USER-003 to FR-USER-010 \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{UC-011 Assign User Roles}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+
+\hline
+\textbf{Use Case ID} &
+UC-011 \\
+\hline
+
+\textbf{Use Case Name} &
+Assign User Roles \\
+\hline
+
+\textbf{Primary Actor} &
+Administrator \\
+\hline
+
+\textbf{Goal} &
+Assign appropriate system roles to users. \\
+\hline
+
+\textbf{Preconditions} &
+Administrator is authenticated. \\
+\hline
+
+\textbf{Trigger} &
+Administrator selects Assign Role. \\
+\hline
+
+\textbf{Main Success Scenario} &
+1. Administrator selects a user.\\
+2. Administrator selects a role.\\
+3. System updates user permissions.\\
+4. Audit log is recorded.\\
+\hline
+
+\textbf{Alternative Flow} &
+Invalid role assignments are rejected.\\
+\hline
+
+\textbf{Postconditions} &
+User role is successfully updated.\\
+\hline
+
+\textbf{Related Functional Requirements} &
+FR-USER-005 \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Electronic Waste Registration Module Use Cases}
+\label{sec:ewaste-usecases}
+
+This section describes the use cases associated with electronic waste
+registration, image upload, record management, and waste tracking.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{UC-012 Register Electronic Waste}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+
+\hline
+\textbf{Use Case ID} &
+UC-012 \\
+\hline
+
+\textbf{Use Case Name} &
+Register Electronic Waste \\
+\hline
+
+\textbf{Primary Actor} &
+Household User, Business User \\
+\hline
+
+\textbf{Supporting Actors} &
+Cloud Firestore, AI Classification Module \\
+\hline
+
+\textbf{Goal} &
+Register an electronic waste item for collection and processing. \\
+\hline
+
+\textbf{Brief Description} &
+Allows users to record details of electronic waste that requires
+collection, repair, refurbishment, recycling, or disposal. \\
+\hline
+
+\textbf{Priority} &
+High \\
+\hline
+
+\textbf{Frequency of Use} &
+High \\
+\hline
+
+\textbf{Preconditions} &
+User is authenticated. \\
+\hline
+
+\textbf{Trigger} &
+User selects Register Electronic Waste. \\
+\hline
+
+\textbf{Main Success Scenario} &
+1. User opens the registration form.\\
+2. User enters waste details.\\
+3. User uploads images.\\
+4. System validates the information.\\
+5. System generates a unique waste ID.\\
+6. Registration is stored successfully.\\
+\hline
+
+\textbf{Alternative Flow} &
+If mandatory fields are missing, validation messages are displayed.\\
+\hline
+
+\textbf{Exception Flow} &
+If the database is unavailable, registration is cancelled and the user
+is informed.\\
+\hline
+
+\textbf{Postconditions} &
+Electronic waste registration is successfully stored.\\
+\hline
+
+\textbf{Related Functional Requirements} &
+FR-EWR-001 to FR-EWR-010 \\
+\hline
+
+\textbf{Related Business Rules} &
+BR-EWR-001 to BR-EWR-005 \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{UC-013 Upload Waste Images}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+
+\hline
+\textbf{Use Case ID} &
+UC-013 \\
+\hline
+
+\textbf{Use Case Name} &
+Upload Waste Images \\
+\hline
+
+\textbf{Primary Actor} &
+Household User, Business User \\
+\hline
+
+\textbf{Goal} &
+Upload one or more images of electronic waste. \\
+\hline
+
+\textbf{Preconditions} &
+Waste registration has been initiated. \\
+\hline
+
+\textbf{Trigger} &
+User selects Upload Images. \\
+\hline
+
+\textbf{Main Success Scenario} &
+1. User selects images from the device.\\
+2. System validates file format and size.\\
+3. Images are uploaded to Firebase Storage.\\
+4. Image references are linked to the waste record.\\
+\hline
+
+\textbf{Alternative Flow} &
+Invalid image formats are rejected.\\
+\hline
+
+\textbf{Postconditions} &
+Images are successfully stored and linked to the waste record.\\
+\hline
+
+\textbf{Related Functional Requirements} &
+FR-EWR-004, FR-EWR-008 \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{UC-014 Edit Waste Registration}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+
+\hline
+\textbf{Use Case ID} &
+UC-014 \\
+\hline
+
+\textbf{Use Case Name} &
+Edit Waste Registration \\
+\hline
+
+\textbf{Primary Actor} &
+Household User, Business User \\
+\hline
+
+\textbf{Goal} &
+Modify an existing pending electronic waste registration. \\
+\hline
+
+\textbf{Preconditions} &
+Registration status is Pending. \\
+\hline
+
+\textbf{Trigger} &
+User selects Edit Registration. \\
+\hline
+
+\textbf{Main Success Scenario} &
+1. User opens a pending registration.\\
+2. User edits required information.\\
+3. System validates changes.\\
+4. Updated information is saved.\\
+\hline
+
+\textbf{Alternative Flow} &
+Completed registrations cannot be edited.\\
+\hline
+
+\textbf{Postconditions} &
+Registration information is updated successfully.\\
+\hline
+
+\textbf{Related Functional Requirements} &
+FR-EWR-009 \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{UC-015 View Waste Registration History}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+
+\hline
+\textbf{Use Case ID} &
+UC-015 \\
+\hline
+
+\textbf{Use Case Name} &
+View Waste Registration History \\
+\hline
+
+\textbf{Primary Actor} &
+Household User, Business User \\
+\hline
+
+\textbf{Goal} &
+View previously registered electronic waste records. \\
+\hline
+
+\textbf{Preconditions} &
+User is authenticated. \\
+\hline
+
+\textbf{Trigger} &
+User selects Registration History. \\
+\hline
+
+\textbf{Main Success Scenario} &
+1. User opens registration history.\\
+2. System retrieves historical records.\\
+3. Records are displayed in chronological order.\\
+\hline
+
+\textbf{Alternative Flow} &
+If no records exist, the system displays an empty history message.\\
+\hline
+
+\textbf{Postconditions} &
+Registration history is successfully displayed.\\
+\hline
+
+\textbf{Related Functional Requirements} &
+FR-EWR-010 \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{UC-016 Delete Pending Registration}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+
+\hline
+\textbf{Use Case ID} &
+UC-016 \\
+\hline
+
+\textbf{Use Case Name} &
+Delete Pending Registration \\
+\hline
+
+\textbf{Primary Actor} &
+Household User, Business User \\
+\hline
+
+\textbf{Goal} &
+Delete an electronic waste registration before collection. \\
+\hline
+
+\textbf{Preconditions} &
+Registration status is Pending. \\
+\hline
+
+\textbf{Trigger} &
+User selects Delete Registration. \\
+\hline
+
+\textbf{Main Success Scenario} &
+1. User confirms deletion.\\
+2. System removes the pending registration.\\
+3. Confirmation message is displayed.\\
+\hline
+
+\textbf{Alternative Flow} &
+Collected or completed registrations cannot be deleted.\\
+\hline
+
+\textbf{Postconditions} &
+Pending registration is permanently removed.\\
+\hline
+
+\textbf{Related Functional Requirements} &
+FR-EWR-009 \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{UC-017 View Waste Details}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+
+\hline
+\textbf{Use Case ID} &
+UC-017 \\
+\hline
+
+\textbf{Use Case Name} &
+View Waste Details \\
+\hline
+
+\textbf{Primary Actor} &
+Household User, Business User, Collector, Administrator \\
+\hline
+
+\textbf{Goal} &
+Display complete information about a selected electronic waste record. \\
+\hline
+
+\textbf{Preconditions} &
+The waste record exists in the database. \\
+\hline
+
+\textbf{Trigger} &
+User selects a waste record. \\
+\hline
+
+\textbf{Main Success Scenario} &
+1. User selects a waste record.\\
+2. System retrieves detailed information.\\
+3. Registration details, images, AI results, and status are displayed.\\
+\hline
+
+\textbf{Alternative Flow} &
+If the record cannot be found, an error message is displayed.\\
+\hline
+
+\textbf{Postconditions} &
+Waste information is successfully displayed.\\
+\hline
+
+\textbf{Related Functional Requirements} &
+FR-EWR-001 to FR-EWR-010 \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Artificial Intelligence Classification Module Use Cases}
+\label{sec:ai-usecases}
+
+This section describes the use cases associated with the Artificial
+Intelligence (AI) module responsible for identifying and classifying
+electronic waste using uploaded images.
+
+The AI module utilizes a trained PyTorch model to assist users in
+determining the appropriate electronic waste category and recommended
+processing method.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{UC-018 Upload Image for AI Analysis}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+
+\hline
+\textbf{Use Case ID} &
+UC-018 \\
+\hline
+
+\textbf{Use Case Name} &
+Upload Image for AI Analysis \\
+\hline
+
+\textbf{Primary Actor} &
+Household User, Business User \\
+\hline
+
+\textbf{Supporting Actors} &
+AI Classification Service, Firebase Storage \\
+\hline
+
+\textbf{Goal} &
+Upload an electronic waste image for AI classification. \\
+\hline
+
+\textbf{Brief Description} &
+Allows users to upload one or more images for automatic AI
+classification. \\
+\hline
+
+\textbf{Priority} &
+High \\
+\hline
+
+\textbf{Frequency of Use} &
+High \\
+\hline
+
+\textbf{Preconditions} &
+User is authenticated. \\
+\hline
+
+\textbf{Trigger} &
+User selects AI Classification. \\
+\hline
+
+\textbf{Main Success Scenario} &
+1. User selects an image.\\
+2. System validates image format.\\
+3. Image is uploaded to Firebase Storage.\\
+4. AI analysis begins.\\
+\hline
+
+\textbf{Alternative Flow} &
+Unsupported image formats are rejected.\\
+\hline
+
+\textbf{Exception Flow} &
+Image upload fails because of network problems.\\
+\hline
+
+\textbf{Postconditions} &
+Image becomes available for AI prediction.\\
+\hline
+
+\textbf{Related Functional Requirements} &
+FR-AI-001, FR-AI-002 \\
+\hline
+
+\textbf{Related Business Rules} &
+BR-AI-001 \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{UC-019 Classify Electronic Waste}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+
+\hline
+\textbf{Use Case ID} &
+UC-019 \\
+\hline
+
+\textbf{Use Case Name} &
+Classify Electronic Waste \\
+\hline
+
+\textbf{Primary Actor} &
+AI Classification Service \\
+\hline
+
+\textbf{Supporting Actors} &
+PyTorch AI Model \\
+\hline
+
+\textbf{Goal} &
+Automatically classify uploaded electronic waste images. \\
+\hline
+
+\textbf{Preconditions} &
+A valid image has been uploaded successfully. \\
+\hline
+
+\textbf{Trigger} &
+Image upload is completed. \\
+\hline
+
+\textbf{Main Success Scenario} &
+1. AI model preprocesses the image.\\
+2. Features are extracted.\\
+3. PyTorch model predicts waste category.\\
+4. Prediction confidence is calculated.\\
+5. Results are stored.\\
+\hline
+
+\textbf{Alternative Flow} &
+Low-confidence predictions are flagged for manual review.\\
+\hline
+
+\textbf{Exception Flow} &
+AI prediction fails because of an internal processing error.\\
+\hline
+
+\textbf{Postconditions} &
+Prediction results are stored successfully.\\
+\hline
+
+\textbf{Related Functional Requirements} &
+FR-AI-003 to FR-AI-006 \\
+\hline
+
+\textbf{Related Business Rules} &
+BR-AI-001 to BR-AI-005 \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{UC-020 View Prediction Results}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+
+\hline
+\textbf{Use Case ID} &
+UC-020 \\
+\hline
+
+\textbf{Use Case Name} &
+View Prediction Results \\
+\hline
+
+\textbf{Primary Actor} &
+Household User, Business User \\
+\hline
+
+\textbf{Goal} &
+Display AI classification results to the user. \\
+\hline
+
+\textbf{Preconditions} &
+AI prediction has completed successfully. \\
+\hline
+
+\textbf{Trigger} &
+User selects View Results. \\
+\hline
+
+\textbf{Main Success Scenario} &
+1. System retrieves prediction results.\\
+2. Waste category is displayed.\\
+3. Recommended treatment is displayed.\\
+4. Confidence score is displayed.\\
+\hline
+
+\textbf{Alternative Flow} &
+If prediction is unavailable, an informative message is displayed.\\
+\hline
+
+\textbf{Postconditions} &
+Prediction information is successfully presented.\\
+\hline
+
+\textbf{Related Functional Requirements} &
+FR-AI-004, FR-AI-005 \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{UC-021 View Confidence Score}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+
+\hline
+\textbf{Use Case ID} &
+UC-021 \\
+\hline
+
+\textbf{Use Case Name} &
+View Confidence Score \\
+\hline
+
+\textbf{Primary Actor} &
+Household User, Business User \\
+\hline
+
+\textbf{Goal} &
+Allow users to evaluate the confidence of AI predictions. \\
+\hline
+
+\textbf{Preconditions} &
+Prediction has been generated. \\
+\hline
+
+\textbf{Trigger} &
+User selects Prediction Details. \\
+\hline
+
+\textbf{Main Success Scenario} &
+1. System retrieves confidence value.\\
+2. Confidence percentage is displayed.\\
+3. Confidence interpretation is displayed.\\
+\hline
+
+\textbf{Alternative Flow} &
+If confidence cannot be calculated, the system displays "Unavailable".\\
+\hline
+
+\textbf{Postconditions} &
+Confidence information is displayed successfully.\\
+\hline
+
+\textbf{Related Functional Requirements} &
+FR-AI-005 \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{UC-022 Review AI Classification History}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+
+\hline
+\textbf{Use Case ID} &
+UC-022 \\
+\hline
+
+\textbf{Use Case Name} &
+Review AI Classification History \\
+\hline
+
+\textbf{Primary Actor} &
+Administrator \\
+\hline
+
+\textbf{Goal} &
+Review historical AI classification records for monitoring and quality
+assurance. \\
+\hline
+
+\textbf{Preconditions} &
+Administrator is authenticated. \\
+\hline
+
+\textbf{Trigger} &
+Administrator selects AI History. \\
+\hline
+
+\textbf{Main Success Scenario} &
+1. System retrieves AI prediction records.\\
+2. Historical predictions are displayed.\\
+3. Administrator reviews prediction statistics.\\
+4. Administrator exports reports if required.\\
+\hline
+
+\textbf{Alternative Flow} &
+No AI history exists.\\
+\hline
+
+\textbf{Postconditions} &
+Historical AI information is successfully displayed.\\
+\hline
+
+\textbf{Related Functional Requirements} &
+FR-AI-006 to FR-AI-010 \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Pickup Scheduling Module Use Cases}
+\label{sec:pickup-usecases}
+
+This section describes the use cases related to electronic waste pickup
+requests, assignment of collection personnel, pickup tracking, and
+completion of collection activities.
+
+The Pickup Scheduling Module coordinates the interaction between users,
+collectors, drivers, and administrators to ensure efficient and
+traceable waste collection.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{UC-023 Request Pickup}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+
+\hline
+\textbf{Use Case ID} &
+UC-023 \\
+\hline
+
+\textbf{Use Case Name} &
+Request Pickup \\
+\hline
+
+\textbf{Primary Actor} &
+Household User, Business User \\
+\hline
+
+\textbf{Supporting Actors} &
+Google Maps Platform, Cloud Firestore \\
+\hline
+
+\textbf{Goal} &
+Schedule a collection request for registered electronic waste. \\
+\hline
+
+\textbf{Brief Description} &
+Allows users to request pickup of registered electronic waste from a
+specified location. \\
+\hline
+
+\textbf{Priority} &
+High \\
+\hline
+
+\textbf{Frequency of Use} &
+High \\
+\hline
+
+\textbf{Preconditions} &
+At least one electronic waste item has been registered. \\
+\hline
+
+\textbf{Trigger} &
+User selects Request Pickup. \\
+\hline
+
+\textbf{Main Success Scenario} &
+1. User selects registered waste items.\\
+2. User confirms pickup address.\\
+3. User selects preferred pickup date and time.\\
+4. System validates the request.\\
+5. Pickup request is created.\\
+6. Confirmation is displayed.\\
+\hline
+
+\textbf{Alternative Flow} &
+If the selected date is unavailable, the system proposes alternative
+pickup dates.\\
+\hline
+
+\textbf{Exception Flow} &
+If location services are unavailable, the user manually enters the
+pickup address.\\
+\hline
+
+\textbf{Postconditions} &
+Pickup request is stored and awaits assignment.\\
+\hline
+
+\textbf{Related Functional Requirements} &
+FR-PU-001, FR-PU-004, FR-PU-005 \\
+\hline
+
+\textbf{Related Business Rules} &
+BR-PU-001 to BR-PU-005 \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{UC-024 Assign Pickup}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+
+\hline
+\textbf{Use Case ID} &
+UC-024 \\
+\hline
+
+\textbf{Use Case Name} &
+Assign Pickup \\
+\hline
+
+\textbf{Primary Actor} &
+Administrator \\
+\hline
+
+\textbf{Supporting Actors} &
+Collector \\
+\hline
+
+\textbf{Goal} &
+Assign a pickup request to an available collector. \\
+\hline
+
+\textbf{Preconditions} &
+A pickup request exists.\\
+At least one collector is available. \\
+\hline
+
+\textbf{Trigger} &
+Administrator selects Assign Collector. \\
+\hline
+
+\textbf{Main Success Scenario} &
+1. Administrator reviews pending pickups.\\
+2. System displays available collectors.\\
+3. Administrator selects a collector.\\
+4. Assignment is saved.\\
+5. Collector receives a notification.\\
+\hline
+
+\textbf{Alternative Flow} &
+If no collectors are available, the pickup remains pending.\\
+\hline
+
+\textbf{Postconditions} &
+Collector is assigned successfully.\\
+\hline
+
+\textbf{Related Functional Requirements} &
+FR-PU-002, FR-PU-007 \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{UC-025 Accept Pickup Assignment}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+
+\hline
+\textbf{Use Case ID} &
+UC-025 \\
+\hline
+
+\textbf{Use Case Name} &
+Accept Pickup Assignment \\
+\hline
+
+\textbf{Primary Actor} &
+Collector \\
+\hline
+
+\textbf{Goal} &
+Accept responsibility for an assigned pickup request. \\
+\hline
+
+\textbf{Preconditions} &
+Collector has received a pickup assignment. \\
+\hline
+
+\textbf{Trigger} &
+Collector selects Accept Assignment. \\
+\hline
+
+\textbf{Main Success Scenario} &
+1. Collector reviews assignment details.\\
+2. Collector accepts the assignment.\\
+3. System updates assignment status.\\
+4. User receives confirmation.\\
+\hline
+
+\textbf{Alternative Flow} &
+Collector declines assignment and provides a reason.\\
+\hline
+
+\textbf{Postconditions} &
+Pickup assignment is confirmed.\\
+\hline
+
+\textbf{Related Functional Requirements} &
+FR-PU-002, FR-PU-006 \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{UC-026 Update Pickup Status}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+
+\hline
+\textbf{Use Case ID} &
+UC-026 \\
+\hline
+
+\textbf{Use Case Name} &
+Update Pickup Status \\
+\hline
+
+\textbf{Primary Actor} &
+Collector \\
+\hline
+
+\textbf{Goal} &
+Update the progress of a scheduled pickup. \\
+\hline
+
+\textbf{Preconditions} &
+Collector has accepted the assignment. \\
+\hline
+
+\textbf{Trigger} &
+Collector selects Update Status. \\
+\hline
+
+\textbf{Main Success Scenario} &
+1. Collector selects current pickup status.\\
+2. Status is updated.\\
+3. User receives a notification.\\
+4. Pickup history is updated.\\
+\hline
+
+\textbf{Alternative Flow} &
+Invalid status transitions are rejected.\\
+\hline
+
+\textbf{Postconditions} &
+Pickup progress is successfully updated.\\
+\hline
+
+\textbf{Related Functional Requirements} &
+FR-PU-006, FR-PU-007, FR-PU-009 \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{UC-027 Complete Pickup}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+
+\hline
+\textbf{Use Case ID} &
+UC-027 \\
+\hline
+
+\textbf{Use Case Name} &
+Complete Pickup \\
+\hline
+
+\textbf{Primary Actor} &
+Collector \\
+\hline
+
+\textbf{Supporting Actors} &
+Driver \\
+\hline
+
+\textbf{Goal} &
+Mark a pickup request as completed and transfer the waste for transport. \\
+\hline
+
+\textbf{Preconditions} &
+Electronic waste has been collected successfully. \\
+\hline
+
+\textbf{Trigger} &
+Collector selects Complete Pickup. \\
+\hline
+
+\textbf{Main Success Scenario} &
+1. Collector confirms collection.\\
+2. Pickup completion time is recorded.\\
+3. Waste status changes to Collected.\\
+4. Driver is notified for transportation.\\
+5. User receives a completion notification.\\
+\hline
+
+\textbf{Alternative Flow} &
+If collection cannot be completed, the collector records the reason and
+reschedules the pickup if appropriate.\\
+\hline
+
+\textbf{Postconditions} &
+Pickup is completed and the waste enters the reverse logistics process.\\
+\hline
+
+\textbf{Related Functional Requirements} &
+FR-PU-008, FR-PU-009, FR-PU-010 \\
+\hline
+
+\textbf{Related Business Rules} &
+BR-PU-003, BR-PU-004 \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

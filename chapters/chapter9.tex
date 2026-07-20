@@ -1,0 +1,1163 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Requirements Traceability and Supporting Information}
+\label{chap:traceability}
+
+This chapter provides supporting information that complements the
+Software Requirements Specification for the EcoTrace Intelligent
+Electronic Waste Recovery and Circular Economy Management System.
+
+The traceability matrices, data dictionary, database schema,
+terminology, UML documentation, and supporting reference materials
+presented in this chapter facilitate implementation, verification,
+validation, maintenance, and future enhancement of the system.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+
+Requirements traceability establishes relationships between the various
+requirements defined throughout this Software Requirements
+Specification.
+
+Traceability supports impact analysis, verification, validation,
+maintenance, and change management by ensuring that every requirement
+can be linked to one or more system functions, business rules, use
+cases, and database components.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Overall Requirements Traceability Matrix}
+
+Table~\ref{tab:overall_traceability} summarizes the relationship between
+major requirement categories within this Software Requirements
+Specification.
+
+\begin{longtable}{|p{5cm}|p{3cm}|p{5cm}|}
+
+\hline
+\textbf{Requirement Category} &
+\textbf{Identifier} &
+\textbf{Reference Chapter} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Requirement Category} &
+\textbf{Identifier} &
+\textbf{Reference Chapter} \\
+\hline
+\endhead
+
+User Interface Requirements &
+UIR &
+Chapter 3 \\
+\hline
+
+Household Interface Requirements &
+HUI &
+Chapter 3 \\
+\hline
+
+Business Interface Requirements &
+BUI &
+Chapter 3 \\
+\hline
+
+Collector Interface Requirements &
+CUI &
+Chapter 3 \\
+\hline
+
+Driver Interface Requirements &
+DUI &
+Chapter 3 \\
+\hline
+
+Technician Interface Requirements &
+TUI &
+Chapter 3 \\
+\hline
+
+Recycler Interface Requirements &
+RUI &
+Chapter 3 \\
+\hline
+
+Administrator Interface Requirements &
+AUI &
+Chapter 3 \\
+\hline
+
+Functional Requirements &
+FR &
+Chapter 4 \\
+\hline
+
+Non-Functional Requirements &
+NFR &
+Chapter 5 \\
+\hline
+
+Database Requirements &
+DBR &
+Chapter 6 \\
+\hline
+
+Business Rules &
+BR &
+Chapter 7 \\
+\hline
+
+Use Cases &
+UC &
+Chapter 8 \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Functional Requirements Traceability Matrix}
+
+\begin{table}[H]
+\centering
+\caption{Functional Requirements Traceability}
+\label{tab:functional_traceability}
+
+\begin{tabular}{|p{6cm}|p{5cm}|}
+
+\hline
+\textbf{Functional Module} &
+\textbf{Requirement IDs} \\
+\hline
+
+Authentication &
+FR-AUTH-001 -- FR-AUTH-010 \\
+\hline
+
+User Management &
+FR-USER-001 -- FR-USER-010 \\
+\hline
+
+Electronic Waste Registration &
+FR-EWR-001 -- FR-EWR-010 \\
+\hline
+
+Artificial Intelligence Classification &
+FR-AI-001 -- FR-AI-010 \\
+\hline
+
+Pickup Scheduling &
+FR-PU-001 -- FR-PU-010 \\
+\hline
+
+Reverse Logistics &
+FR-RL-001 -- FR-RL-010 \\
+\hline
+
+Repair Management &
+FR-REP-001 -- FR-REP-010 \\
+\hline
+
+Refurbishment Management &
+FR-REF-001 -- FR-REF-010 \\
+\hline
+
+Recycling Management &
+FR-REC-001 -- FR-REC-010 \\
+\hline
+
+Marketplace &
+FR-MKT-001 -- FR-MKT-010 \\
+\hline
+
+Notification Management &
+FR-NOT-001 -- FR-NOT-010 \\
+\hline
+
+Reporting &
+FR-RPT-001 -- FR-RPT-010 \\
+\hline
+
+Administration &
+FR-ADM-001 -- FR-ADM-010 \\
+\hline
+
+\end{tabular}
+
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Non-Functional Requirements Traceability Matrix}
+
+Table~\ref{tab:nfr_traceability} summarizes the traceability of the
+non-functional requirements specified in Chapter~\ref{chap:non-functional-requirements}.
+
+\begin{longtable}{|p{5cm}|p{4cm}|p{4cm}|}
+
+\hline
+\textbf{Quality Attribute} &
+\textbf{Requirement IDs} &
+\textbf{Verification Method} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Quality Attribute} &
+\textbf{Requirement IDs} &
+\textbf{Verification Method} \\
+\hline
+\endhead
+
+Performance &
+NFR-PER-001 -- NFR-PER-008 &
+Performance Testing \\
+\hline
+
+Security &
+NFR-SEC-001 -- NFR-SEC-008 &
+Security Testing \\
+\hline
+
+Reliability &
+NFR-REL-001 -- NFR-REL-006 &
+System Testing \\
+\hline
+
+Availability &
+NFR-AVL-001 -- NFR-AVL-006 &
+Operational Testing \\
+\hline
+
+Scalability &
+NFR-SCA-001 -- NFR-SCA-006 &
+Load Testing \\
+\hline
+
+Maintainability &
+NFR-MNT-001 -- NFR-MNT-006 &
+Code Review \\
+\hline
+
+Portability &
+NFR-PRT-001 -- NFR-PRT-006 &
+Deployment Testing \\
+\hline
+
+Usability &
+NFR-USA-001 -- NFR-USA-006 &
+User Acceptance Testing \\
+\hline
+
+Accessibility &
+NFR-ACC-001 -- NFR-ACC-006 &
+Accessibility Evaluation \\
+\hline
+
+Compliance &
+NFR-COM-001 -- NFR-COM-006 &
+Compliance Review \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Database Requirements Traceability Matrix}
+
+\begin{longtable}{|p{5cm}|p{4cm}|p{4cm}|}
+
+\hline
+\textbf{Database Component} &
+\textbf{Requirement IDs} &
+\textbf{Related Module} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Database Component} &
+\textbf{Requirement IDs} &
+\textbf{Related Module} \\
+\hline
+\endhead
+
+Users Collection &
+DBR-001 -- DBR-003 &
+Authentication \\
+\hline
+
+Electronic Waste Collection &
+DBR-004 -- DBR-006 &
+Waste Registration \\
+\hline
+
+Pickup Requests &
+DBR-007 &
+Pickup Scheduling \\
+\hline
+
+Repair Jobs &
+DBR-008 &
+Repair Management \\
+\hline
+
+Marketplace &
+DBR-009 &
+Marketplace \\
+\hline
+
+Audit Logs &
+DBR-010 &
+Administration \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Business Rules Traceability Matrix}
+
+\begin{longtable}{|p{5cm}|p{4cm}|p{4cm}|}
+
+\hline
+\textbf{Business Rule Category} &
+\textbf{Rule IDs} &
+\textbf{Related Functional Module} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Business Rule Category} &
+\textbf{Rule IDs} &
+\textbf{Related Functional Module} \\
+\hline
+\endhead
+
+User Registration &
+BR-REG-001 -- BR-REG-005 &
+Authentication \\
+\hline
+
+Authentication &
+BR-AUTH-001 -- BR-AUTH-005 &
+Authentication \\
+\hline
+
+Electronic Waste Registration &
+BR-EWR-001 -- BR-EWR-005 &
+Waste Registration \\
+\hline
+
+AI Classification &
+BR-AI-001 -- BR-AI-005 &
+AI Module \\
+\hline
+
+Pickup Scheduling &
+BR-PU-001 -- BR-PU-005 &
+Pickup Module \\
+\hline
+
+Reverse Logistics &
+BR-RL-001 -- BR-RL-005 &
+Reverse Logistics \\
+\hline
+
+Marketplace &
+BR-MKT-001 -- BR-MKT-005 &
+Marketplace \\
+\hline
+
+Reporting &
+BR-RPT-001 -- BR-RPT-005 &
+Reporting \\
+\hline
+
+Administration &
+BR-ADM-001 -- BR-ADM-005 &
+Administration \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Use Case Traceability Matrix}
+
+\begin{longtable}{|p{2.5cm}|p{5cm}|p{5cm}|}
+
+\hline
+\textbf{Use Case} &
+\textbf{Related Functional Requirements} &
+\textbf{Database Collections} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Use Case} &
+\textbf{Related Functional Requirements} &
+\textbf{Database Collections} \\
+\hline
+\endhead
+
+UC-001 -- UC-006 &
+FR-AUTH-001 -- FR-AUTH-010 &
+users \\
+\hline
+
+UC-007 -- UC-011 &
+FR-USER-001 -- FR-USER-010 &
+users \\
+\hline
+
+UC-012 -- UC-017 &
+FR-EWR-001 -- FR-EWR-010 &
+electronicWaste \\
+\hline
+
+UC-018 -- UC-022 &
+FR-AI-001 -- FR-AI-010 &
+electronicWaste, predictions \\
+\hline
+
+UC-023 -- UC-027 &
+FR-PU-001 -- FR-PU-010 &
+pickupRequests \\
+\hline
+
+UC-028 -- UC-031 &
+FR-RL-001 -- FR-RL-010 &
+transportLogs \\
+\hline
+
+UC-032 -- UC-035 &
+FR-REP-001 -- FR-REP-010 &
+repairJobs \\
+\hline
+
+UC-036 -- UC-038 &
+FR-REF-001 -- FR-REF-010 &
+refurbishments \\
+\hline
+
+UC-039 -- UC-041 &
+FR-REC-001 -- FR-REC-010 &
+recycling \\
+\hline
+
+UC-042 -- UC-045 &
+FR-MKT-001 -- FR-MKT-010 &
+marketplace \\
+\hline
+
+UC-046 -- UC-047 &
+FR-RPT-001 -- FR-RPT-010 &
+reports \\
+\hline
+
+UC-048 -- UC-050 &
+FR-ADM-001 -- FR-ADM-010 &
+auditLogs, settings \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Firestore Data Dictionary}
+\label{sec:data-dictionary}
+
+The Firestore Data Dictionary defines the primary collections,
+their purposes, and the principal data fields maintained by the
+EcoTrace platform.
+
+\begin{longtable}{|p{4cm}|p{5cm}|p{5cm}|}
+
+\hline
+\textbf{Collection} &
+\textbf{Primary Fields} &
+\textbf{Description} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Collection} &
+\textbf{Primary Fields} &
+\textbf{Description} \\
+\hline
+\endhead
+
+users &
+userId, name, email, phone, role, profileImage, accountStatus &
+Stores registered user information. \\
+\hline
+
+electronicWaste &
+wasteId, category, condition, images, ownerId, location, status &
+Stores electronic waste registration records. \\
+\hline
+
+pickupRequests &
+pickupId, wasteId, collectorId, driverId, pickupDate, status &
+Stores collection requests. \\
+\hline
+
+transportLogs &
+transportId, pickupId, source, destination, deliveryStatus &
+Stores transportation records. \\
+\hline
+
+repairJobs &
+repairId, wasteId, technicianId, diagnosis, repairStatus &
+Stores repair activities. \\
+\hline
+
+refurbishments &
+refurbishmentId, repairId, technicianId, qualityGrade &
+Stores refurbishment activities. \\
+\hline
+
+recycling &
+recyclingId, wasteId, recoveredMaterials, recyclingDate &
+Stores recycling records. \\
+\hline
+
+marketplace &
+listingId, productName, sellerId, price, availability &
+Stores marketplace listings. \\
+\hline
+
+notifications &
+notificationId, recipientId, title, message, status &
+Stores user notifications. \\
+\hline
+
+reports &
+reportId, reportType, generatedBy, generatedDate &
+Stores generated reports. \\
+\hline
+
+auditLogs &
+logId, userId, action, timestamp &
+Stores audit trail information. \\
+\hline
+
+settings &
+settingId, parameterName, parameterValue &
+Stores configurable system settings. \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Firestore Database Schema}
+\label{sec:database-schema}
+
+The EcoTrace platform adopts a logical Firestore NoSQL database
+structure.
+
+Figure~\ref{fig:firestore_schema} illustrates the logical relationship
+between the primary Firestore collections.
+
+\begin{figure}[H]
+\centering
+
+\fbox{
+\parbox[c][11cm][c]{14cm}{
+\centering
+Placeholder for Firestore Database Schema Diagram
+
+\vspace{0.5cm}
+
+users
+
+↓
+
+electronicWaste
+
+↓
+
+pickupRequests
+
+↓
+
+transportLogs
+
+↓
+
+repairJobs
+
+↓
+
+refurbishments
+
+↓
+
+marketplace
+
+↓
+
+recycling
+
+↓
+
+reports
+
+↓
+
+auditLogs
+}}
+
+\caption{Logical Firestore Database Schema}
+
+\label{fig:firestore_schema}
+
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Firestore Security Rules Overview}
+
+The EcoTrace platform shall implement Firestore Security Rules to
+protect cloud-hosted information.
+
+Major security principles include:
+
+\begin{itemize}
+
+\item Only authenticated users may access protected collections.
+
+\item Users may only modify their own profile information.
+
+\item Administrators possess elevated privileges.
+
+\item Marketplace listings shall be editable only by their owners.
+
+\item Audit logs shall only be accessible to administrators.
+
+\item All write operations shall require authentication.
+
+\item Cloud Storage uploads shall be authenticated.
+
+\item Access permissions shall follow Role-Based Access Control.
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Glossary of Terms}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+
+\hline
+\textbf{Term} &
+\textbf{Definition} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Term} &
+\textbf{Definition} \\
+\hline
+\endhead
+
+Electronic Waste &
+Discarded electrical or electronic equipment intended for recycling,
+repair, refurbishment, or disposal. \\
+\hline
+
+Circular Economy &
+An economic model emphasizing reuse, repair, refurbishment, and
+recycling to minimize waste. \\
+\hline
+
+Collector &
+A user responsible for collecting registered electronic waste. \\
+\hline
+
+Recycler &
+A user responsible for processing electronic waste into reusable
+materials. \\
+\hline
+
+Refurbishment &
+The restoration of electronic devices to a reusable condition. \\
+\hline
+
+Reverse Logistics &
+Movement of products from users back to processing facilities. \\
+\hline
+
+AI Classification &
+Automatic identification of electronic waste categories using machine
+learning models. \\
+\hline
+
+PyTorch &
+The deep learning framework used for AI model development and
+inference. \\
+\hline
+
+Cloud Firestore &
+Google's cloud-hosted NoSQL database used by EcoTrace. \\
+\hline
+
+Firebase Authentication &
+Cloud-based user authentication service. \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Acronyms and Abbreviations}
+
+\begin{longtable}{|p{3cm}|p{11cm}|}
+
+\hline
+\textbf{Acronym} &
+\textbf{Meaning} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Acronym} &
+\textbf{Meaning} \\
+\hline
+\endhead
+
+AI &
+Artificial Intelligence \\
+\hline
+
+API &
+Application Programming Interface \\
+\hline
+
+CRUD &
+Create, Read, Update, Delete \\
+\hline
+
+DBR &
+Database Requirement \\
+\hline
+
+FR &
+Functional Requirement \\
+\hline
+
+GPS &
+Global Positioning System \\
+\hline
+
+HTTPS &
+Hypertext Transfer Protocol Secure \\
+\hline
+
+JSON &
+JavaScript Object Notation \\
+\hline
+
+NFR &
+Non-Functional Requirement \\
+\hline
+
+RBAC &
+Role-Based Access Control \\
+\hline
+
+REST &
+Representational State Transfer \\
+\hline
+
+SRS &
+Software Requirements Specification \\
+\hline
+
+TLS &
+Transport Layer Security \\
+\hline
+
+UC &
+Use Case \\
+\hline
+
+UML &
+Unified Modeling Language \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{UML Diagrams}
+\label{sec:uml-diagrams}
+
+The Unified Modeling Language (UML) diagrams presented in this section
+provide graphical representations of the EcoTrace system structure,
+behaviour, and interactions.
+
+These diagrams complement the textual requirements specified
+throughout this Software Requirements Specification and provide
+additional guidance for software design, implementation, and testing.
+
+The UML documentation consists of the following diagrams:
+
+\begin{itemize}
+
+\item Overall System Use Case Diagram
+
+\item Authentication Module Use Case Diagram
+
+\item Electronic Waste Registration Use Case Diagram
+
+\item Artificial Intelligence Classification Use Case Diagram
+
+\item Pickup Scheduling Use Case Diagram
+
+\item Reverse Logistics Use Case Diagram
+
+\item Repair Management Use Case Diagram
+
+\item Refurbishment Management Use Case Diagram
+
+\item Recycling Management Use Case Diagram
+
+\item Marketplace Use Case Diagram
+
+\item Reporting Module Use Case Diagram
+
+\item Administration Module Use Case Diagram
+
+\item Class Diagram
+
+\item Entity Relationship Diagram
+
+\item Activity Diagram
+
+\item Sequence Diagram
+
+\item Component Diagram
+
+\item Deployment Diagram
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Overall Use Case Diagram}
+
+\begin{figure}[H]
+\centering
+
+\fbox{
+\parbox[c][10cm][c]{14cm}{
+\centering
+
+Placeholder for Overall EcoTrace Use Case Diagram
+
+}}
+
+\caption{Overall EcoTrace Use Case Diagram}
+
+\label{fig:overall_usecase}
+
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Class Diagram}
+
+\begin{figure}[H]
+\centering
+
+\fbox{
+\parbox[c][10cm][c]{14cm}{
+\centering
+
+Placeholder for UML Class Diagram
+
+}}
+
+\caption{EcoTrace Class Diagram}
+
+\label{fig:classdiagram}
+
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Deployment Diagram}
+
+\begin{figure}[H]
+\centering
+
+\fbox{
+\parbox[c][10cm][c]{14cm}{
+\centering
+
+Placeholder for Deployment Diagram
+
+}}
+
+\caption{EcoTrace Deployment Diagram}
+
+\label{fig:deployment}
+
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{API Overview}
+\label{sec:api-overview}
+
+The EcoTrace platform adopts a service-oriented architecture in which
+Flutter applications communicate with Firebase cloud services and
+external APIs through secure HTTPS connections.
+
+The major APIs and cloud services used by the platform are summarized
+in Table~\ref{tab:api_overview}.
+
+\begin{longtable}{|p{5cm}|p{8cm}|}
+
+\hline
+
+\textbf{API / Service}
+
+&
+
+\textbf{Purpose}
+
+\\
+
+\hline
+
+\endfirsthead
+
+\hline
+
+\textbf{API / Service}
+
+&
+
+\textbf{Purpose}
+
+\\
+
+\hline
+
+\endhead
+
+Firebase Authentication
+
+&
+
+User authentication and identity management.
+
+\\
+
+\hline
+
+Cloud Firestore
+
+&
+
+Cloud-hosted NoSQL database.
+
+\\
+
+\hline
+
+Firebase Storage
+
+&
+
+Storage of electronic waste images and documents.
+
+\\
+
+\hline
+
+Firebase Cloud Messaging
+
+&
+
+Push notification delivery.
+
+\\
+
+\hline
+
+Google Maps Platform
+
+&
+
+Maps, routing, GPS positioning, and navigation.
+
+\\
+
+\hline
+
+PyTorch AI Inference API
+
+&
+
+Electronic waste image classification.
+
+\\
+
+\hline
+
+Cloud Functions
+
+&
+
+Server-side business logic.
+
+\\
+
+\hline
+
+REST API
+
+&
+
+Communication between Flutter applications and cloud services.
+
+\\
+
+\hline
+
+HTTPS/TLS
+
+&
+
+Secure communication protocol.
+
+\\
+
+\hline
+
+\end{longtable}
+
+The APIs shall exchange information using JSON over secure HTTPS
+connections.
+
+All communication involving authentication, user information,
+electronic waste records, and AI predictions shall be encrypted using
+Transport Layer Security (TLS).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Document Revision History}
+\label{sec:revision-history}
+
+Table~\ref{tab:revision_history} records the revision history of this
+Software Requirements Specification.
+
+\begin{longtable}{|p{2cm}|p{3cm}|p{3cm}|p{6cm}|}
+
+\hline
+
+\textbf{Version}
+
+&
+
+\textbf{Date}
+
+&
+
+\textbf{Author}
+
+&
+
+\textbf{Description}
+
+\\
+
+\hline
+
+\endfirsthead
+
+\hline
+
+\textbf{Version}
+
+&
+
+\textbf{Date}
+
+&
+
+\textbf{Author}
+
+&
+
+\textbf{Description}
+
+\\
+
+\hline
+
+\endhead
+
+0.1
+
+&
+
+July 2026
+
+&
+
+Abass David Komeh
+
+&
+
+Initial draft.
+
+\\
+
+\hline
+
+0.5
+
+&
+
+August 2026
+
+&
+
+Abass David Komeh
+
+&
+
+Functional and interface requirements completed.
+
+\\
+
+\hline
+
+0.9
+
+&
+
+August 2026
+
+&
+
+Abass David Komeh
+
+&
+
+Complete review and validation.
+
+\\
+
+\hline
+
+1.0
+
+&
+
+August 2026
+
+&
+
+Abass David Komeh
+
+&
+
+Final approved version.
+
+\\
+
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,327 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Overall Description}
+\label{chap:overall-description}
+
+This chapter provides a high-level description of the EcoTrace
+Intelligent Electronic Waste Recovery and Circular Economy Management
+System. It describes the system's relationship to its operational
+environment, identifies its major functions, defines the intended user
+classes, specifies the operating environment, outlines design
+constraints, and documents assumptions and dependencies that influence
+the development and operation of the system.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Product Perspective}
+\label{sec:product-perspective}
+
+EcoTrace is an integrated electronic waste management platform designed
+to support the complete lifecycle of electronic waste, from
+registration and collection to repair, refurbishment, recycling,
+resale, and final disposal.
+
+The platform adopts a modular architecture that combines mobile
+applications, web applications, cloud services, geospatial services,
+and artificial intelligence into a unified solution.
+
+The system supports multiple stakeholders, including households,
+businesses, waste collectors, drivers, technicians, recyclers, and
+system administrators.
+
+EcoTrace operates as a cloud-based information system where data is
+centrally managed while allowing authorized users to access services
+from multiple platforms.
+
+The overall product architecture consists of:
+
+\begin{itemize}
+
+\item Flutter cross-platform applications;
+
+\item Firebase cloud infrastructure;
+
+\item Cloud Firestore database;
+
+\item Firebase Storage;
+
+\item Firebase Authentication;
+
+\item Firebase Cloud Messaging;
+
+\item Google Maps Platform;
+
+\item PyTorch-based Artificial Intelligence service; and
+
+\item Administrative web dashboard.
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Product Functions}
+\label{sec:product-functions}
+
+The EcoTrace platform provides a comprehensive set of functions for the
+management of electronic waste and circular economy operations.
+
+The major system functions include:
+
+\begin{itemize}
+
+\item user registration and authentication;
+
+\item role-based access control;
+
+\item electronic waste registration;
+
+\item AI-assisted electronic waste classification;
+
+\item pickup request management;
+
+\item route visualization and navigation;
+
+\item repair and refurbishment management;
+
+\item recycling management;
+
+\item reverse logistics management;
+
+\item marketplace management;
+
+\item notification management;
+
+\item reporting and analytics; and
+
+\item system administration.
+
+\end{itemize}
+
+The detailed functional requirements for each module are presented in
+Chapter~\ref{chap:functional-requirements}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{User Classes and Characteristics}
+\label{sec:user-classes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The EcoTrace platform serves multiple categories of users. Each user
+class has specific responsibilities and access privileges.
+
+\begin{table}[H]
+\centering
+\caption{User Classes and Characteristics}
+\label{tab:user_classes}
+\small
+
+\begin{tabular}{|p{4cm}|p{10cm}|}
+
+\hline
+\textbf{User Class} &
+\textbf{Description} \\
+\hline
+
+Household User &
+Individuals who register electronic waste and request collection
+services. \\
+\hline
+
+Business User &
+Organizations responsible for managing institutional electronic waste
+and coordinating bulk collections. \\
+\hline
+
+Collector &
+Field personnel responsible for collecting electronic waste from
+registered locations. \\
+\hline
+
+Driver &
+Personnel responsible for transporting collected electronic waste to
+repair, refurbishment, or recycling facilities. \\
+\hline
+
+Technician &
+Users responsible for inspecting, repairing, and refurbishing
+electronic devices. \\
+\hline
+
+Recycler &
+Personnel responsible for processing electronic waste materials for
+recycling and recovery. \\
+\hline
+
+Administrator &
+Authorized personnel responsible for system configuration, monitoring,
+reporting, and user management. \\
+\hline
+
+Super Administrator &
+Users with unrestricted administrative privileges over the entire
+platform. \\
+\hline
+
+\end{tabular}
+
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Operating Environment}
+\label{sec:operating-environment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+EcoTrace operates within a cloud-based computing environment that
+supports Android mobile devices, modern web browsers, and Microsoft
+Windows desktop systems.
+
+The operational environment consists of:
+
+\begin{itemize}
+
+\item Android smartphones and tablets;
+
+\item Windows desktop computers;
+
+\item modern web browsers;
+
+\item Firebase cloud infrastructure;
+
+\item Google Maps Platform;
+
+\item Internet connectivity;
+
+\item Cloud Firestore database;
+
+\item Firebase Storage;
+
+\item PyTorch inference server; and
+
+\item secure HTTPS communication.
+
+\end{itemize}
+
+The system requires reliable network connectivity for synchronization,
+cloud storage, authentication, and artificial intelligence inference.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Design Constraints}
+\label{sec:design-constraints}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The development of EcoTrace is subject to several technical,
+operational, and organizational constraints.
+
+The principal constraints include:
+
+\begin{itemize}
+
+\item Flutter is used as the cross-platform development framework.
+
+\item Firebase provides authentication, cloud database, storage, and
+notification services.
+
+\item Google Maps Platform provides geospatial functionality.
+
+\item PyTorch provides artificial intelligence inference.
+
+\item The system depends on Internet connectivity for cloud-based
+operations.
+
+\item Access to protected resources requires authentication.
+
+\item Personal information must be protected according to applicable
+privacy requirements.
+
+\item The system shall remain scalable to accommodate future expansion.
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{User Documentation}
+\label{sec:user-documentation}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The EcoTrace platform shall be accompanied by documentation to support
+installation, operation, maintenance, and training.
+
+The documentation shall include:
+
+\begin{itemize}
+
+\item User Manual;
+
+\item Administrator Guide;
+
+\item Installation Guide;
+
+\item Software Requirements Specification;
+
+\item System Design Documentation;
+
+\item API Documentation;
+
+\item Maintenance Guide; and
+
+\item Training Materials.
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Assumptions and Dependencies}
+\label{sec:assumptions-dependencies}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The EcoTrace platform shall be accompanied by documentation to support
+installation, operation, maintenance, and training.
+
+The documentation shall include:
+
+\begin{itemize}
+
+\item User Manual;
+
+\item Administrator Guide;
+
+\item Installation Guide;
+
+\item Software Requirements Specification;
+
+\item System Design Documentation;
+
+\item API Documentation;
+
+\item Maintenance Guide; and
+
+\item Training Materials.
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Assumptions and Dependencies}
+\label{sec:assumptions-dependencies}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The successful operation of EcoTrace depends on several assumptions and
+external services.
+
+These assumptions include:
+
+\begin{itemize}
+
+\item Users possess compatible computing devices.
+
+\item Reliable Internet connectivity is available.
+
+\item Firebase cloud services remain operational.
+
+\item Google Maps Platform services are available.
+
+\item The PyTorch inference server remains accessible.
+
+\item Users provide accurate registration information.
+
+\item Electronic waste images are of sufficient quality for AI
+classification.
+
+\item Authorized personnel maintain the cloud infrastructure.
+
+\end{itemize}
+
+These assumptions define the operational context within which the
+EcoTrace platform is expected to function.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

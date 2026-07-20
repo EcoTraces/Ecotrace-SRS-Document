@@ -1,0 +1,1119 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Functional Requirements}
+\label{chap:functional-requirements}
+
+This chapter specifies the functional requirements of the EcoTrace
+Intelligent Electronic Waste Recovery and Circular Economy Management
+System.
+
+The functional requirements describe the services that the system shall
+provide, the expected system behaviour, user interactions, validation
+rules, and acceptance criteria for each functional module.
+
+Each requirement is uniquely identified to support traceability,
+implementation, testing, and future maintenance.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+\label{sec:functional-introduction}
+
+The EcoTrace platform is composed of several integrated functional
+modules that collectively support intelligent electronic waste
+management and circular economy operations.
+
+Each module performs a specific set of responsibilities while
+interacting with other modules through secure and well-defined
+interfaces.
+
+The major functional modules include:
+
+\begin{itemize}
+
+\item Authentication
+
+\item User Management
+
+\item Electronic Waste Registration
+
+\item Artificial Intelligence Classification
+
+\item Pickup Scheduling
+
+\item Reverse Logistics
+
+\item Repair Management
+
+\item Refurbishment Management
+
+\item Recycling Management
+
+\item Marketplace
+
+\item Notification Management
+
+\item Reporting
+
+\item Administration
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Authentication Module}
+\label{sec:authentication-module}
+
+\subsection{Purpose}
+
+The Authentication Module shall verify user identities before granting
+access to protected system resources.
+
+\subsection{Actors}
+
+\begin{itemize}
+
+\item Household User
+
+\item Business User
+
+\item Collector
+
+\item Driver
+
+\item Technician
+
+\item Recycler
+
+\item Administrator
+
+\item Super Administrator
+
+\end{itemize}
+
+\subsection{Functional Requirements}
+
+\begin{longtable}{|p{2.8cm}|p{10.5cm}|}
+
+\hline
+\textbf{Requirement ID} &
+\textbf{Requirement} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Requirement ID} &
+\textbf{Requirement} \\
+\hline
+\endhead
+
+FR-AUTH-001 &
+The system shall allow users to register using the required personal
+information. \\
+\hline
+
+FR-AUTH-002 &
+The system shall verify that each email address is unique before account
+creation. \\
+\hline
+
+FR-AUTH-003 &
+The system shall authenticate registered users using valid login
+credentials. \\
+\hline
+
+FR-AUTH-004 &
+The system shall reject invalid login attempts. \\
+\hline
+
+FR-AUTH-005 &
+The system shall support password reset functionality. \\
+\hline
+
+FR-AUTH-006 &
+The system shall allow authenticated users to securely log out. \\
+\hline
+
+FR-AUTH-007 &
+The system shall implement Role-Based Access Control. \\
+\hline
+
+FR-AUTH-008 &
+The system shall maintain secure user sessions. \\
+\hline
+
+FR-AUTH-009 &
+The system shall automatically terminate expired sessions. \\
+\hline
+
+FR-AUTH-010 &
+The system shall record authentication events for audit purposes. \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{User Management Module}
+\label{sec:user-management}
+
+\subsection{Purpose}
+
+The User Management Module shall manage user accounts, profiles,
+permissions, and account status.
+
+\subsection{Functional Requirements}
+
+\begin{longtable}{|p{2.8cm}|p{10.5cm}|}
+
+\hline
+\textbf{Requirement ID} &
+\textbf{Requirement} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Requirement ID} &
+\textbf{Requirement} \\
+\hline
+\endhead
+
+FR-USER-001 &
+The system shall allow users to update their profiles. \\
+\hline
+
+FR-USER-002 &
+The system shall store profile photographs. \\
+\hline
+
+FR-USER-003 &
+The system shall allow administrators to activate user accounts. \\
+\hline
+
+FR-USER-004 &
+The system shall allow administrators to deactivate user accounts. \\
+\hline
+
+FR-USER-005 &
+The system shall allow administrators to assign user roles. \\
+\hline
+
+FR-USER-006 &
+The system shall maintain user activity logs. \\
+\hline
+
+FR-USER-007 &
+The system shall allow administrators to search users. \\
+\hline
+
+FR-USER-008 &
+The system shall allow administrators to filter users by role. \\
+\hline
+
+FR-USER-009 &
+The system shall notify users of important account events. \\
+\hline
+
+FR-USER-010 &
+The system shall prevent unauthorized profile modification. \\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Electronic Waste Registration Module}
+\label{sec:ewaste-registration}
+
+\subsection{Purpose}
+
+The Electronic Waste Registration Module shall enable authorized users
+to register electronic waste items for collection, repair,
+refurbishment, recycling, resale, or responsible disposal.
+
+\subsection{Primary Actors}
+
+\begin{itemize}
+\item Household User
+\item Business User
+\item Administrator
+\end{itemize}
+
+\subsection{Functional Requirements}
+
+\begin{longtable}{|p{3cm}|p{10.2cm}|}
+\hline
+\textbf{Requirement ID} & \textbf{Requirement} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Requirement ID} & \textbf{Requirement} \\
+\hline
+\endhead
+
+FR-EWR-001 &
+The system shall allow authorized users to register electronic waste items.\\
+\hline
+
+FR-EWR-002 &
+The system shall capture waste category information.\\
+\hline
+
+FR-EWR-003 &
+The system shall capture waste condition information.\\
+\hline
+
+FR-EWR-004 &
+The system shall allow multiple images to be uploaded.\\
+\hline
+
+FR-EWR-005 &
+The system shall record GPS coordinates during registration.\\
+\hline
+
+FR-EWR-006 &
+The system shall validate mandatory fields before submission.\\
+\hline
+
+FR-EWR-007 &
+The system shall generate a unique waste identification number.\\
+\hline
+
+FR-EWR-008 &
+The system shall store all records in Cloud Firestore.\\
+\hline
+
+FR-EWR-009 &
+The system shall allow users to edit pending registrations.\\
+\hline
+
+FR-EWR-010 &
+The system shall maintain registration history.\\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Artificial Intelligence Classification Module}
+\label{sec:ai-classification}
+
+\subsection{Purpose}
+
+The Artificial Intelligence Module shall automatically classify
+electronic waste images using a trained PyTorch model.
+
+\subsection{Primary Actors}
+
+\begin{itemize}
+\item Household User
+\item Business User
+\item Technician
+\item Administrator
+\end{itemize}
+
+\subsection{Functional Requirements}
+
+\begin{longtable}{|p{3cm}|p{10.2cm}|}
+
+\hline
+\textbf{Requirement ID} &
+\textbf{Requirement}\\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Requirement ID} &
+\textbf{Requirement}\\
+\hline
+\endhead
+
+FR-AI-001 &
+The system shall allow users to upload electronic waste images.\\
+\hline
+
+FR-AI-002 &
+The system shall preprocess uploaded images before prediction.\\
+\hline
+
+FR-AI-003 &
+The system shall classify uploaded images using the PyTorch model.\\
+\hline
+
+FR-AI-004 &
+The system shall return the predicted electronic waste category.\\
+\hline
+
+FR-AI-005 &
+The system shall display prediction confidence scores.\\
+\hline
+
+FR-AI-006 &
+The system shall store prediction results.\\
+\hline
+
+FR-AI-007 &
+The system shall reject unsupported image formats.\\
+\hline
+
+FR-AI-008 &
+The system shall allow administrators to update AI models.\\
+\hline
+
+FR-AI-009 &
+The system shall log AI prediction requests.\\
+\hline
+
+FR-AI-010 &
+The system shall support future model upgrades.\\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Pickup Scheduling Module}
+\label{sec:pickup-module}
+
+\subsection{Purpose}
+
+The Pickup Scheduling Module shall coordinate electronic waste
+collection requests between users, collectors, and drivers.
+
+\subsection{Primary Actors}
+
+\begin{itemize}
+\item Household User
+\item Business User
+\item Collector
+\item Driver
+\end{itemize}
+
+\subsection{Functional Requirements}
+
+\begin{longtable}{|p{3cm}|p{10.2cm}|}
+
+\hline
+\textbf{Requirement ID} &
+\textbf{Requirement}\\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Requirement ID} &
+\textbf{Requirement}\\
+\hline
+\endhead
+
+FR-PU-001 &
+The system shall allow users to request pickups.\\
+\hline
+
+FR-PU-002 &
+The system shall assign pickup requests to collectors.\\
+\hline
+
+FR-PU-003 &
+The system shall assign drivers to transport collected waste.\\
+\hline
+
+FR-PU-004 &
+The system shall display pickup routes on Google Maps.\\
+\hline
+
+FR-PU-005 &
+The system shall provide estimated pickup times.\\
+\hline
+
+FR-PU-006 &
+The system shall allow collectors to update pickup status.\\
+\hline
+
+FR-PU-007 &
+The system shall notify users of status changes.\\
+\hline
+
+FR-PU-008 &
+The system shall record pickup completion time.\\
+\hline
+
+FR-PU-009 &
+The system shall maintain pickup history.\\
+\hline
+
+FR-PU-010 &
+The system shall support pickup rescheduling.\\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Reverse Logistics Management Module}
+\label{sec:reverse-logistics}
+
+\subsection{Purpose}
+
+The Reverse Logistics Management Module shall manage the movement of
+electronic waste from collection points to repair, refurbishment,
+recycling, resale, or final disposal facilities.
+
+\subsection{Primary Actors}
+
+\begin{itemize}
+\item Collector
+\item Driver
+\item Recycler
+\item Administrator
+\end{itemize}
+
+\subsection{Functional Requirements}
+
+\begin{longtable}{|p{3cm}|p{10.2cm}|}
+
+\hline
+\textbf{Requirement ID} &
+\textbf{Requirement}\\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Requirement ID} &
+\textbf{Requirement}\\
+\hline
+\endhead
+
+FR-RL-001 &
+The system shall record waste movement between facilities.\\
+\hline
+
+FR-RL-002 &
+The system shall maintain transportation history.\\
+\hline
+
+FR-RL-003 &
+The system shall update waste location in real time.\\
+\hline
+
+FR-RL-004 &
+The system shall record transfer approvals.\\
+\hline
+
+FR-RL-005 &
+The system shall support delivery confirmation.\\
+\hline
+
+FR-RL-006 &
+The system shall notify relevant stakeholders of transfer status.\\
+\hline
+
+FR-RL-007 &
+The system shall generate logistics reports.\\
+\hline
+
+FR-RL-008 &
+The system shall maintain complete chain-of-custody records.\\
+\hline
+
+FR-RL-009 &
+The system shall support route optimization.\\
+\hline
+
+FR-RL-010 &
+The system shall archive completed logistics records.\\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Repair Management Module}
+\label{sec:repair-management}
+
+\subsection{Purpose}
+
+The Repair Management Module shall support inspection, diagnosis,
+repair tracking, and quality assurance of electronic devices.
+
+\subsection{Primary Actors}
+
+\begin{itemize}
+\item Technician
+\item Administrator
+\end{itemize}
+
+\subsection{Functional Requirements}
+
+\begin{longtable}{|p{3cm}|p{10.2cm}|}
+
+\hline
+\textbf{Requirement ID} &
+\textbf{Requirement}\\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Requirement ID} &
+\textbf{Requirement}\\
+\hline
+\endhead
+
+FR-REP-001 &
+The system shall register repair jobs.\\
+\hline
+
+FR-REP-002 &
+The system shall record inspection findings.\\
+\hline
+
+FR-REP-003 &
+The system shall record replaced components.\\
+\hline
+
+FR-REP-004 &
+The system shall update repair status.\\
+\hline
+
+FR-REP-005 &
+The system shall estimate repair completion dates.\\
+\hline
+
+FR-REP-006 &
+The system shall generate repair reports.\\
+\hline
+
+FR-REP-007 &
+The system shall notify users when repairs are completed.\\
+\hline
+
+FR-REP-008 &
+The system shall maintain repair history.\\
+\hline
+
+FR-REP-009 &
+The system shall allow supervisors to approve completed repairs.\\
+\hline
+
+FR-REP-010 &
+The system shall archive completed repair jobs.\\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Refurbishment Management Module}
+\label{sec:refurbishment}
+
+\subsection{Purpose}
+
+The Refurbishment Management Module shall manage restoration activities
+that prepare electronic devices for reuse or resale.
+
+\subsection{Primary Actors}
+
+\begin{itemize}
+\item Technician
+\item Administrator
+\end{itemize}
+
+\subsection{Functional Requirements}
+
+\begin{longtable}{|p{3cm}|p{10.2cm}|}
+
+\hline
+\textbf{Requirement ID} &
+\textbf{Requirement}\\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Requirement ID} &
+\textbf{Requirement}\\
+\hline
+\endhead
+
+FR-REF-001 &
+The system shall register refurbishment activities.\\
+\hline
+
+FR-REF-002 &
+The system shall record refurbishment progress.\\
+\hline
+
+FR-REF-003 &
+The system shall assign technicians.\\
+\hline
+
+FR-REF-004 &
+The system shall record replaced parts.\\
+\hline
+
+FR-REF-005 &
+The system shall generate refurbishment certificates.\\
+\hline
+
+FR-REF-006 &
+The system shall maintain refurbishment history.\\
+\hline
+
+FR-REF-007 &
+The system shall support quality inspection before resale.\\
+\hline
+
+FR-REF-008 &
+The system shall classify refurbished devices according to condition.\\
+\hline
+
+FR-REF-009 &
+The system shall prepare approved devices for marketplace listing.\\
+\hline
+
+FR-REF-010 &
+The system shall archive completed refurbishment records.\\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Recycling Management Module}
+\label{sec:recycling}
+
+\subsection{Purpose}
+
+The Recycling Management Module shall support environmentally
+responsible processing and recovery of electronic waste materials.
+
+\subsection{Primary Actors}
+
+\begin{itemize}
+\item Recycler
+\item Administrator
+\end{itemize}
+
+\subsection{Functional Requirements}
+
+\begin{longtable}{|p{3cm}|p{10.2cm}|}
+
+\hline
+\textbf{Requirement ID} &
+\textbf{Requirement}\\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Requirement ID} &
+\textbf{Requirement}\\
+\hline
+\endhead
+
+FR-REC-001 &
+The system shall register recycling batches.\\
+\hline
+
+FR-REC-002 &
+The system shall record recovered materials.\\
+\hline
+
+FR-REC-003 &
+The system shall maintain recycling statistics.\\
+\hline
+
+FR-REC-004 &
+The system shall calculate recovery rates.\\
+\hline
+
+FR-REC-005 &
+The system shall record hazardous waste disposal.\\
+\hline
+
+FR-REC-006 &
+The system shall generate recycling reports.\\
+\hline
+
+FR-REC-007 &
+The system shall maintain recycling history.\\
+\hline
+
+FR-REC-008 &
+The system shall support environmental compliance reporting.\\
+\hline
+
+FR-REC-009 &
+The system shall notify administrators of completed recycling activities.\\
+\hline
+
+FR-REC-010 &
+The system shall archive recycling records.\\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Marketplace Module}
+\label{sec:marketplace}
+
+\subsection{Purpose}
+
+The Marketplace Module shall provide a secure digital marketplace where
+refurbished electronic devices, reusable components, and recyclable
+materials may be listed, searched, purchased, and managed.
+
+\subsection{Primary Actors}
+
+\begin{itemize}
+\item Household User
+\item Business User
+\item Technician
+\item Administrator
+\end{itemize}
+
+\subsection{Functional Requirements}
+
+\begin{longtable}{|p{3cm}|p{10.2cm}|}
+
+\hline
+\textbf{Requirement ID} &
+\textbf{Requirement} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Requirement ID} &
+\textbf{Requirement} \\
+\hline
+\endhead
+
+FR-MKT-001 &
+The system shall allow authorized users to list refurbished electronic devices for sale.\\
+\hline
+
+FR-MKT-002 &
+The system shall display detailed product information.\\
+\hline
+
+FR-MKT-003 &
+The system shall allow users to search marketplace listings.\\
+\hline
+
+FR-MKT-004 &
+The system shall support category-based product filtering.\\
+\hline
+
+FR-MKT-005 &
+The system shall maintain inventory status.\\
+\hline
+
+FR-MKT-006 &
+The system shall support order placement.\\
+\hline
+
+FR-MKT-007 &
+The system shall record transaction history.\\
+\hline
+
+FR-MKT-008 &
+The system shall notify sellers of new orders.\\
+\hline
+
+FR-MKT-009 &
+The system shall allow administrators to remove inappropriate listings.\\
+\hline
+
+FR-MKT-010 &
+The system shall archive completed marketplace transactions.\\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Notification Management Module}
+\label{sec:notifications}
+
+\subsection{Purpose}
+
+The Notification Management Module shall deliver timely system
+notifications to users regarding important events and activities.
+
+\subsection{Primary Actors}
+
+\begin{itemize}
+\item All Users
+\end{itemize}
+
+\subsection{Functional Requirements}
+
+\begin{longtable}{|p{3cm}|p{10.2cm}|}
+
+\hline
+\textbf{Requirement ID} &
+\textbf{Requirement} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Requirement ID} &
+\textbf{Requirement} \\
+\hline
+\endhead
+
+FR-NOT-001 &
+The system shall notify users when electronic waste registration is successful.\\
+\hline
+
+FR-NOT-002 &
+The system shall notify users of pickup schedules.\\
+\hline
+
+FR-NOT-003 &
+The system shall notify collectors of assigned pickups.\\
+\hline
+
+FR-NOT-004 &
+The system shall notify technicians of assigned repair tasks.\\
+\hline
+
+FR-NOT-005 &
+The system shall notify users of AI prediction results.\\
+\hline
+
+FR-NOT-006 &
+The system shall notify administrators of critical system events.\\
+\hline
+
+FR-NOT-007 &
+The system shall support push notifications.\\
+\hline
+
+FR-NOT-008 &
+The system shall maintain notification history.\\
+\hline
+
+FR-NOT-009 &
+The system shall allow users to manage notification preferences.\\
+\hline
+
+FR-NOT-010 &
+The system shall support real-time notification delivery.\\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Reporting Module}
+\label{sec:reporting}
+
+\subsection{Purpose}
+
+The Reporting Module shall generate operational, analytical, and
+administrative reports for decision-making and monitoring.
+
+\subsection{Primary Actors}
+
+\begin{itemize}
+\item Administrator
+\item Super Administrator
+\end{itemize}
+
+\subsection{Functional Requirements}
+
+\begin{longtable}{|p{3cm}|p{10.2cm}|}
+
+\hline
+\textbf{Requirement ID} &
+\textbf{Requirement} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Requirement ID} &
+\textbf{Requirement} \\
+\hline
+\endhead
+
+FR-RPT-001 &
+The system shall generate electronic waste collection reports.\\
+\hline
+
+FR-RPT-002 &
+The system shall generate recycling reports.\\
+\hline
+
+FR-RPT-003 &
+The system shall generate marketplace reports.\\
+\hline
+
+FR-RPT-004 &
+The system shall generate AI prediction statistics.\\
+\hline
+
+FR-RPT-005 &
+The system shall generate user activity reports.\\
+\hline
+
+FR-RPT-006 &
+The system shall support PDF report generation.\\
+\hline
+
+FR-RPT-007 &
+The system shall support report export.\\
+\hline
+
+FR-RPT-008 &
+The system shall allow reports to be filtered by date.\\
+\hline
+
+FR-RPT-009 &
+The system shall support dashboard analytics.\\
+\hline
+
+FR-RPT-010 &
+The system shall archive generated reports.\\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Administration Module}
+\label{sec:administration}
+
+\subsection{Purpose}
+
+The Administration Module shall provide authorized administrators with
+tools to configure, monitor, maintain, and secure the EcoTrace
+platform.
+
+\subsection{Primary Actors}
+
+\begin{itemize}
+\item Administrator
+\item Super Administrator
+\end{itemize}
+
+\subsection{Functional Requirements}
+
+\begin{longtable}{|p{3cm}|p{10.2cm}|}
+
+\hline
+\textbf{Requirement ID} &
+\textbf{Requirement} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Requirement ID} &
+\textbf{Requirement} \\
+\hline
+\endhead
+
+FR-ADM-001 &
+The system shall allow administrators to manage user accounts.\\
+\hline
+
+FR-ADM-002 &
+The system shall manage user roles and permissions.\\
+\hline
+
+FR-ADM-003 &
+The system shall monitor system activity.\\
+\hline
+
+FR-ADM-004 &
+The system shall manage AI models and configurations.\\
+\hline
+
+FR-ADM-005 &
+The system shall manage marketplace listings.\\
+\hline
+
+FR-ADM-006 &
+The system shall maintain audit logs.\\
+\hline
+
+FR-ADM-007 &
+The system shall generate administrative reports.\\
+\hline
+
+FR-ADM-008 &
+The system shall configure notification settings.\\
+\hline
+
+FR-ADM-009 &
+The system shall manage system configuration parameters.\\
+\hline
+
+FR-ADM-010 &
+The system shall back up critical system data.\\
+\hline
+
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Functional Requirements Traceability}
+\label{sec:functional-traceability}
+
+Table~\ref{tab:fr_traceability} provides traceability between the major
+functional modules and their corresponding requirement identifiers.
+
+\begin{table}[H]
+\centering
+\caption{Functional Requirements Traceability Matrix}
+\label{tab:fr_traceability}
+
+\begin{tabular}{|p{6cm}|p{5cm}|}
+
+\hline
+\textbf{Functional Module} &
+\textbf{Requirement IDs} \\
+\hline
+
+Authentication &
+FR-AUTH-001 -- FR-AUTH-010 \\
+\hline
+
+User Management &
+FR-USER-001 -- FR-USER-010 \\
+\hline
+
+Electronic Waste Registration &
+FR-EWR-001 -- FR-EWR-010 \\
+\hline
+
+Artificial Intelligence Classification &
+FR-AI-001 -- FR-AI-010 \\
+\hline
+
+Pickup Scheduling &
+FR-PU-001 -- FR-PU-010 \\
+\hline
+
+Reverse Logistics &
+FR-RL-001 -- FR-RL-010 \\
+\hline
+
+Repair Management &
+FR-REP-001 -- FR-REP-010 \\
+\hline
+
+Refurbishment Management &
+FR-REF-001 -- FR-REF-010 \\
+\hline
+
+Recycling Management &
+FR-REC-001 -- FR-REC-010 \\
+\hline
+
+Marketplace &
+FR-MKT-001 -- FR-MKT-010 \\
+\hline
+
+Notification Management &
+FR-NOT-001 -- FR-NOT-010 \\
+\hline
+
+Reporting &
+FR-RPT-001 -- FR-RPT-010 \\
+\hline
+
+Administration &
+FR-ADM-001 -- FR-ADM-010 \\
+\hline
+
+\end{tabular}
+
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
